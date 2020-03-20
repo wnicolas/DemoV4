@@ -8,6 +8,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 import graficos.Loader;
+import objetos.Player;
 
 public class AttackSound implements Strategy{
 
@@ -26,6 +27,7 @@ public class AttackSound implements Strategy{
 			}
 	
 	}
+
 
 
 

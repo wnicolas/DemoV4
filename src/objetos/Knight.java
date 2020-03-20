@@ -2,14 +2,18 @@ package objetos;
 
 import java.awt.Graphics;
 
+import StateAction.Estado;
+import StateAction.KAttack;
+import StateAction.KJump;
 import estados.EstadoJuego;
-import graficos.Assets;
 import matematica.Vector2D;
 
 public class Knight extends Player implements Personaje{
 	
 	private final int TIPO_PERSONAJE=1;
 	private Personaje sucesor;
+	
+	static Estado miEstado=new KJump();;
 
 	public Knight(String tipo, Vector2D posicion, Personaje s) {
 		super(tipo, posicion);
@@ -28,13 +32,19 @@ public class Knight extends Player implements Personaje{
 		
 	}
 	
-	int i=0;
+	
 	@Override
-	public void dibujar(Graphics g) {
-		i++;
-		i=i%5;
-		g.drawImage(Assets.knight_attack[i],(int) posicion.getX(), (int)posicion.getY(), null);
+	public void dibujar(Graphics g) {	
+		Estado.i++;
+		g.drawImage(miEstado.ejecutarAccion(g),(int) posicion.getX(), (int)posicion.getY(), null);
 		
+	}
+	
+	public static void setEstado(Estado e) {
+		miEstado=e;
+	}
+	public void ejecutarAccion(Graphics g) {
+		miEstado.ejecutarAccion(g);
 	}
 
 }

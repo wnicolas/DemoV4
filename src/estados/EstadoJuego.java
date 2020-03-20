@@ -22,7 +22,6 @@ public class EstadoJuego {
 	
 	public EstadoJuego(int personaje) {
 		this.tipo=personaje;
-		//player=new Player(Assets.player,new Vector2D(500,200));
 		defaultPersonaje=new DefaultPersonaje();
 		rogue=new Rogue("rogue",new Vector2D(100,100),defaultPersonaje);
 		mage=new Mage("mage",new Vector2D(100,200),rogue);
@@ -35,7 +34,6 @@ public class EstadoJuego {
 	}
 	
 	public void actualizar() {
-		//player.actualizar();
 		if(Tipo_Personaje==1) {
 			System.out.println("KNIGHT");
 			knight.actualizar();
@@ -69,5 +67,7 @@ public class EstadoJuego {
 		}
 		
 	}
+	
+	
 
 }

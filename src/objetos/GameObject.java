@@ -7,12 +7,10 @@ import matematica.Vector2D;
 
 public abstract class GameObject {
 
-	//protected BufferedImage textura;
 	protected Vector2D posicion;
 	protected String tipo;
 	
 	public GameObject(String tipo, Vector2D posicion) {
-		//this.textura=textura;
 		this.posicion=posicion;
 		this.tipo=tipo;
 	}
