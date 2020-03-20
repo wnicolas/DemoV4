@@ -8,3 +8,4 @@ Instrucciones: Escoja el personaje viendo el menú en consola y luego oprima 0. 
 Controles: 
   mover: w,a,s,d.
   acción: j,k.
+  mutear(SoundOff):m
