@@ -10,12 +10,24 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import graficos.Loader;
 import objetos.Player;
 
-public class AttackSound implements Strategy{
+public class AttackSound implements Strategy,Observador{
+	
+	private OffSound offSound;
+	private boolean off;
+	
+	public AttackSound(OffSound offSound) {
+		this.offSound=offSound;
+		offSound.enlazarObservadores(this);
+	}
+	public AttackSound(boolean off) {
+		if(off==false) {
+			getSonido();
+		}
+	}
+
 
 	@Override
-	public void getSonido() {
-
-		
+	public void getSonido() {		
 			try {
 				Clip clip= AudioSystem.getClip();
 				clip.open(AudioSystem.getAudioInputStream(AttackSound.class.getResourceAsStream("/sonidos/atacar.wav")));
@@ -28,7 +40,12 @@ public class AttackSound implements Strategy{
 	
 	}
 
-
-
-
+	@Override
+	public void actualizar(boolean off) {
+		if(off) {
+			this.off=false;
+		}else {
+			this.off=true;
+		}
+	}
 }

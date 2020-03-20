@@ -53,7 +53,7 @@ public class VistaJuego extends JFrame implements Runnable{
 		
 		do {
 			System.out.println("*********************************");
-			System.out.println("Elija un personaje");
+			System.out.println("Elija un personaje y luego oprima 0");
 			System.out.println("1-Knight");
 			System.out.println("2-Mage");
 			System.out.println("3-Rogue");

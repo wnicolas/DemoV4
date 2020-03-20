@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import StateAction.Estado;
 import StateAction.KAttack;
 import StateAction.KJump;
+import StateAction.KStop;
 import estados.EstadoJuego;
 import matematica.Vector2D;
 
@@ -13,7 +14,7 @@ public class Knight extends Player implements Personaje{
 	private final int TIPO_PERSONAJE=1;
 	private Personaje sucesor;
 	
-	static Estado miEstado=new KJump();;
+	static Estado miEstado;
 
 	public Knight(String tipo, Vector2D posicion, Personaje s) {
 		super(tipo, posicion);

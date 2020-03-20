@@ -27,42 +27,35 @@ public class EstadoJuego {
 		mage=new Mage("mage",new Vector2D(100,200),rogue);
 		knight=new Knight("knight",new Vector2D(100,300),mage);
 		knight.setPersonaje(tipo);
-		
-		
-			
-		
 	}
 	
 	public void actualizar() {
 		if(Tipo_Personaje==1) {
-			System.out.println("KNIGHT");
+			//System.out.println("KNIGHT");
 			knight.actualizar();
 			
 		} 
 		if(Tipo_Personaje==2) {
-			System.out.println("MAGE");
+			//System.out.println("MAGE");
 			mage.actualizar();
 			
 		}
 		if(Tipo_Personaje==3) {
-			System.out.println("ROGUE");
+			//System.out.println("ROGUE");
 			rogue.actualizar();			
 		}
 	}
 	public void dibujar(Graphics g) {
-		//player.dibujar(g);
+		
 		if(Tipo_Personaje==1) {
-			System.out.println("KNIGHT");
 			knight.dibujar(g);
-			
 		} 
-		if(Tipo_Personaje==2) {
-			System.out.println("MAGE");
+		
+		if(Tipo_Personaje==2) {	
 			mage.dibujar(g);
-			
 		}
-		if(Tipo_Personaje==3) {
-			System.out.println("ROGUE");
+		
+		if(Tipo_Personaje==3) {	
 			rogue.dibujar(g);			
 		}
 		
